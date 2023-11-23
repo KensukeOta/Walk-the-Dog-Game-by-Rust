@@ -7,6 +7,12 @@ use futures::channel::{oneshot::channel, mpsc::{UnboundedReceiver, unbounded}};
 use wasm_bindgen::{JsValue, JsCast, closure::Closure};
 use web_sys::{HtmlImageElement, CanvasRenderingContext2d};
 
+#[derive(Clone, Copy)]
+pub struct Point {
+    pub x: i16,
+    pub y: i16,
+}
+
 pub struct Rect {
     pub x: f32,
     pub y: f32,
