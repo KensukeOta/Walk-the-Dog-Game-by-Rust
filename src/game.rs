@@ -1,4 +1,4 @@
-use crate::{engine::{Game, Renderer, Rect, self}, browser};
+use crate::{engine::{Game, Renderer, Rect, self, KeyState}, browser};
 
 use std::collections::HashMap;
 use anyhow::Result;
@@ -54,7 +54,7 @@ impl Game for WalkTheDog {
             frame: self.frame,
         }))
     }
-    fn update(&mut self) {
+    fn update(&mut self, keystate: &KeyState) {
         if self.frame < 23 {
             self.frame += 1;
         } else {
